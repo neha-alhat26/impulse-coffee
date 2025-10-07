@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Midnight Mocha - Impulse Coffee</title>
+  <style>
+    body {
+      background-color: #F4F5F1;
+      margin: 0;
+      padding: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    .top-bar {
+      height: 65px;
+      background-color: #FFFFFF;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: xx-large;
+      font-family: "MV Boli";
+      color: #9C4B4B;
+    }
+
+    .nav-links {
+      font-size: large;
+      color: #9C4B4B;
+    }
+
+    .nav-links strong span {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-links strong span:hover {
+      color: #6c2e2e;
+    }
+
+    .description-section {
+      padding: 100px 30px 60px;
+      display: flex;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .description-section img {
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h2 {
+      color: #9C4B4B;
+      font-family: "MV Boli";
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      font-size: 17px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .buy-btn {
+      background-color: #9C4B4B;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #6c2e2e;
+    }
+
+    .footer {
+      background-color: #fff;
+      color: #9C4B4B;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+      margin-top: 60px;
+    }
+
+    .footer a {
+      color: #9C4B4B;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  
+  .auto-style2 {
+	text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="logo"><strong>Impulse Coffee</strong></div>
+    <div class="nav-links">
+      <strong>
+        <span>
+          <a href="coffee.html" class="auto-style2">Home</a></span> |
+        <span>
+          <a href="shop.html" class="auto-style2">Shop</a></span> |
+        <span>
+          <a href="about.html" class="auto-style2">About</a></span> |
+        <span>
+          <a href="contact.html" class="auto-style2">Contact</a></span>
+      </strong>
+    </div>
+  </div>
+
+  <!-- Product Description Section -->
+  <section class="description-section">
+    <img src="images/product4.webp" alt="Midnight Mocha" />
+    <div class="product-info">
+      <h2>Chocolate Rasberry</h2>
+      <p>Indulge in the rich, velvety fusion of dark cocoa and bold espresso—crafted to awaken your senses and add mystery to your midnight cravings.</p>
+      <p>Perfectly balanced with smooth chocolate notes and deep roast tones, it's your go-to blend for late-night reflections and cozy conversations.</p>
+      <div class="price">₹299</div>
+      <button class="buy-btn">Buy Now</button> 
+      <br><br><br><br><br><br><br>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 Impulse Coffee. All rights reserved.</p>
+      <p>
+        <a href="#">Instagram</a> |
+        <a href="#">Pinterest</a> |
+        <a href="#">Facebook</a>
+      </p>
+    </div>
+  
+    <!-- JavaScript to handle Buy Now click -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const buyBtn = document.querySelector('.buy-btn');
+        if (buyBtn) {
+          buyBtn.addEventListener('click', function () {
+            alert("Order placed successfully!");
+          });
+        }
+      });
+    </script>
+  
+  </body>
+  </html>
+  

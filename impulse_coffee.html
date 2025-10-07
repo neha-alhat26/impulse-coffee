@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Language" content="en-in" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> Coffee</title>
+  <style>
+    body {
+      background-color: #F4F5F1;
+      margin: 0;
+      padding: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    .top-bar {
+      height: 65px;
+      background-color: #FFFFFF;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: xx-large;
+      font-family: "MV Boli";
+      color: #9C4B4B;
+    }
+
+    .nav-links {
+      font-size: large;
+      color: #9C4B4B;
+    }
+
+    .nav-links strong span {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-links strong span:hover {
+      color: #6c2e2e;
+    }
+
+    .hero {
+      height: 675px;
+      width: 100%;
+      background-image: url('images/R.jpg');
+      /* Added overflow: hidden to contain the animation */
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 65px;
+      position: relative;
+    }
+
+    .hero-content {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      /* --- Animation styles --- */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .hero-content.shifted {
+      left: 28%;
+      /* Move to the left on click */
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-family: 'MV Boli', cursive;
+      color: #9C4B4B;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #9C4B4B;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      /* Added border:none and cursor:pointer for button consistency */
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero-btn:hover {
+      background-color: #6c2e2e;
+    }
+
+    /* --- New Join Us Form Styles --- */
+    .join-us-form {
+      position: absolute;
+      top: 50%;
+      left: 150%;
+      /* Start off-screen */
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      opacity: 0;
+      transition-property: left, opacity;
+      transition-duration: 0.8s;
+      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .join-us-form.visible {
+      left: 72%;
+      /* Slide into view */
+      opacity: 1;
+    }
+
+    .join-us-form h2 {
+      font-size: 32px;
+      font-family: 'MV Boli', cursive;
+      color: #9C4B4B;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .join-us-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .join-us-form input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    .join-us-form input:focus {
+      outline: none;
+      border-color: #9C4B4B;
+    }
+
+    section {
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: #9C4B4B;
+      font-family: "MV Boli";
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      /* Added transition for hover effect */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* New hover effect for cards */
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      color: #9C4B4B;
+      margin-bottom: 10px;
+      font-family: 'MV Boli';
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    .footer {
+      background-color: #fff;
+      color: #9C4B4B;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+    }
+
+    .footer a {
+      color: #9C4B4B;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .auto-style2 {
+      text-decoration: none;
+      /* Added color to match original style */
+      color: #9C4B4B;
+    }
+    
+    /* --- New On-Scroll Animation Styles --- */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* --- Pop-up Message Styles --- */
+    .popup {
+      position: fixed;
+      bottom: -100px; /* Start off-screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #9C4B4B;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s, bottom 0.5s, visibility 0.5s;
+    }
+
+    .popup.show {
+      bottom: 40px;
+      opacity: 1;
+      visibility: visible;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="logo"><strong>Impulse Coffee</strong></div>
+    <div class="nav-links">
+      <strong>
+        <span>
+          <a href="C:\xampp\htdocs\imp\impulse_coffee.html" class="auto-style2">Home</a></span> |
+        <span>
+          <a href="C:\xampp\htdocs\imp\shop.html" class="auto-style2">Shop</a></span> |
+        <span>
+          <a href="C:\xampp\htdocs\imp\about.html" class="auto-style2">About</a></span> |
+        <span>
+          <a href="C:\xampp\htdocs\imp\impulse-contact.html" class="auto-style2">Contact</a></span>
+      </strong>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Impulse Coffee</h1>
+      <p>Your daily ritual, redefined. Crafted with passion, served with warmth.</p>
+      <!-- Changed <a> to <button> and added an ID for JavaScript -->
+      <button id="exploreBtn" class="hero-btn">Explore Our Blends</button>
+    </div>
+    <!-- New "Join Us" form -->
+    <div class="join-us-form">
+      <h2>Join Our Community</h2>
+      <p>Get the latest blends and offers delivered to your inbox.</p>
+    <form id="joinForm" method="post" action="subs.php">
+  <input type="text" name="customer_name" placeholder="Your Name" required>
+
+  <input type="email" name="customer_email" placeholder="Your Email" required>
+  
+  <button type="submit" class="hero-btn">Subscribe</button>
+</form>
+    </div>
+  </div>
+
+
+  <!-- Our Story Section -->
+  <section class="animate-on-scroll">
+    <div class="section-title">Our Story</div>
+    <div class="section-text">
+      Born from a love for comfort and caffeine, Impulse Coffee is where every cup tells a story.
+      We believe coffee isn't just a drink—it's a pause, a hug, a fresh start.
+    </div>
+  </section>
+
+  <!-- Coffee Experience Video Section -->
+  <section class="animate-on-scroll">
+    <div class="section-title">The Coffee Experience</div>
+    <div style="max-width: 800px; margin: 0 auto;">
+      <video width="100%" controls style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <source src="images\coffee2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="section-text" style="margin-top: 15px;">
+        Watch the heart of our craft — every cup brewed with care, comfort, and a touch of magic ✨
+      </p>
+    </div>
+  </section>
+
+  <!-- Signature Blends Section -->
+  <section class="animate-on-scroll">
+    <div class="section-title">Signature Blends</div>
+    <div class="card-container">
+      <div class="card">
+        <img src="images\product4.webp" alt="Midnight Mocha" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
+        <h3>Midnight Mocha</h3>
+        <p>Rich cocoa and espresso swirled for that late-night vibe.</p>
+      </div>
+      <div class="card">
+        <img src="images\product3.webp" alt="Vanilla Sunrise" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
+        <h3>Vanilla Sunrise</h3>
+        <p>Light, creamy and smooth — perfect for slow mornings.</p>
+      </div>
+      <div class="card">
+        <img src="images\product 6.webp" alt="Impulse Bold" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
+        <h3>Impulse Bold</h3>
+        <p>A punch of dark roast for unstoppable energy and flavor.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Visit Us Section -->
+  <section class="animate-on-scroll">
+    <div class="section-title">Visit Us</div>
+    <div class="section-text">
+      Come say hi at our café in the heart of the city.
+      Cozy corners, warm brews, and friendly faces await ☕✨
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 Impulse Coffee. All rights reserved.</p>
+    <p>
+      <a href="#">Instagram</a> |
+      <a href="#">Pinterest</a> |
+      <a href="#">Facebook</a>
+    </p>
+  </div>
+  
+  <!-- Pop-up Message -->
+  <div id="popup-message" class="popup">
+    <p>Thanks for subscribing!</p>
+  </div>
+
+
+  <!-- JavaScript for the animation -->
+  <script>
+    // Animation for hero section form
+    const exploreBtn = document.getElementById('exploreBtn');
+    const heroContent = document.querySelector('.hero-content');
+    const joinForm = document.querySelector('.join-us-form');
+
+    exploreBtn.addEventListener('click', (event) => {
+      // Prevents the default link behavior if it were an <a> tag
+      event.preventDefault();
+      heroContent.classList.add('shifted');
+      joinForm.classList.add('visible');
+    });
+
+    // New: Animation for sections on scroll
+    const scrollElements = document.querySelectorAll(".animate-on-scroll");
+    
+    // Initialize Intersection Observer for better performance
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    scrollElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // New: Pop-up message for subscription form
+    const joinUsForm = document.getElementById('joinForm');
+    const popupMessage = document.getElementById('popup-message');
+
+    joinUsForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Stop the form from reloading the page
+        
+        // Show the pop-up
+        popupMessage.classList.add('show');
+        
+        // Hide the pop-up after 3 seconds
+        setTimeout(() => {
+            popupMessage.classList.remove('show');
+        }, 3000);
+        
+        // Optional: Clear the form fields
+        joinUsForm.reset();
+    });
+
+  </script>
+
+</body>
+
+</html>
+

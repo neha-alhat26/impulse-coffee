@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Vanilla Sunrise - Impulse Coffee</title>
+  <style>
+    body {
+      background-color: #F4F5F1;
+      margin: 0;
+      padding: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    .top-bar {
+      height: 65px;
+      background-color: #FFFFFF;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: xx-large;
+      font-family: "MV Boli";
+      color: #9C4B4B;
+    }
+
+    .nav-links {
+      font-size: large;
+      color: #9C4B4B;
+    }
+
+    .nav-links strong span {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-links strong span:hover {
+      color: #6c2e2e;
+    }
+
+    .description-section {
+      padding: 100px 30px 60px;
+      display: flex;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .description-section img {
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h2 {
+      color: #9C4B4B;
+      font-family: "MV Boli";
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .product-info p {
+      font-size: 17px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .buy-btn {
+      background-color: #9C4B4B;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #6c2e2e;
+    }
+
+    .footer {
+      background-color: #fff;
+      color: #9C4B4B;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+      margin-top: 60px;
+    }
+
+    .footer a {
+      color: #9C4B4B;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="logo"><strong>Impulse Coffee</strong></div>
+     <div class="nav-links">
+      <strong>
+        <span>
+          <a href="coffee.html" class="auto-style2">Home</a></span> |
+        <span>
+          <a href="shop.html" class="auto-style2">Shop</a></span> |
+        <span>
+          <a href="about.html" class="auto-style2">About</a></span> |
+        <span>
+          <a href="contact.html" class="auto-style2">Contact</a></span>
+      </strong>
+    </div>
+  </div>
+
+  <!-- Product Description Section -->
+  <section class="description-section">
+    <img src="images/product2.webp" alt="Vanilla Sunrise" />
+    <div class="product-info">
+      <h2>Vanilla Sunrise</h2>
+      <p>Start your day with a ray of flavor — Vanilla Sunrise is our signature light roast blend infused with delicate, creamy vanilla that feels like a soft hug with every sip. Smooth, gentle, and aromatic, this blend is designed to awaken your senses without overwhelming them.</p>
+
+      <p>Crafted from handpicked Arabica beans and naturally flavored with warm vanilla notes, Vanilla Sunrise offers a well-rounded cup that’s ideal for peaceful mornings, reflective journaling, and coffee dates with yourself. It’s light-bodied with subtle sweetness — a graceful balance of flavor and calm.</p>
+
+      <p>Whether you prefer it black or with a touch of milk, this blend maintains its character and charm in every form. It’s not just coffee — it’s a morning ritual, a sensory delight, and a gentle push to begin your day inspired.</p>
+
+      <p>Pair it with croissants, fruit bowls, or just a deep breath. Vanilla Sunrise is your new morning muse, bottled and brewed.</p>
+
+      <div class="price">₹269</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 Impulse Coffee. All rights reserved.</p>
+    <p>
+      <a href="#">Instagram</a> |
+      <a href="#">Pinterest</a> |
+      <a href="#">Facebook</a>
+    </p>
+  </div>
+ <!-- JavaScript to handle Buy Now click -->
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buyBtn = document.querySelector('.buy-btn');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', function () {
+        alert("Order placed successfully!");
+      });
+    }
+  });
+</script>
+</body>
+
+</html>

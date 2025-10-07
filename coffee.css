@@ -1,0 +1,278 @@
+ body {
+      background-color: #F4F5F1;
+      margin: 0;
+      padding: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    .top-bar {
+      height: 55px;
+      background-color: #FFFFFF;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: xx-large;
+      font-family: "MV Boli";
+      color: #9C4B4B;
+    }
+
+    .nav-links {
+      font-size: large;
+      color: #9C4B4B;
+    }
+
+    .nav-links strong span {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-links strong span:hover {
+      color: #6c2e2e;
+    }
+
+    .hero {
+      height: 675px;
+      width: 100%;
+      background-image: url('images/R.jpg');
+      /* Added overflow: hidden to contain the animation */
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 65px;
+      position: relative;
+    }
+
+    .hero-content {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 60%;
+      /* --- Animation styles --- */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .hero-content.shifted {
+      left: 28%;
+      /* Move to the left on click */
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      font-family: 'MV Boli', cursive;
+      color: #9C4B4B;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #9C4B4B;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      /* Added border:none and cursor:pointer for button consistency */
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero-btn:hover {
+      background-color: #6c2e2e;
+    }
+
+    /* --- New Join Us Form Styles --- */
+    .join-us-form {
+      position: absolute;
+      top: 50%;
+      left: 150%;
+      /* Start off-screen */
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 450px;
+      text-align: center;
+      opacity: 0;
+      transition-property: left, opacity;
+      transition-duration: 0.8s;
+      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .join-us-form.visible {
+      left: 72%;
+      /* Slide into view */
+      opacity: 1;
+    }
+
+    .join-us-form h2 {
+      font-size: 32px;
+      font-family: 'MV Boli', cursive;
+      color: #9C4B4B;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .join-us-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .join-us-form input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    .join-us-form input:focus {
+      outline: none;
+      border-color: #9C4B4B;
+    }
+
+    section {
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: #9C4B4B;
+      font-family: "MV Boli";
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      /* Added transition for hover effect */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* New hover effect for cards */
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      color: #9C4B4B;
+      margin-bottom: 10px;
+      font-family: 'MV Boli';
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    .footer {
+      background-color: #fff;
+      color: #9C4B4B;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+    }
+
+    .footer a {
+      color: #9C4B4B;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .auto-style2 {
+      text-decoration: none;
+      /* Added color to match original style */
+      color: #9C4B4B;
+    }
+    
+    /* --- New On-Scroll Animation Styles --- */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* --- Pop-up Message Styles --- */
+    .popup {
+      position: fixed;
+      bottom: -100px; /* Start off-screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #9C4B4B;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s, bottom 0.5s, visibility 0.5s;
+    }
+
+    .popup.show {
+      bottom: 40px;
+      opacity: 1;
+      visibility: visible;
+    }
